@@ -24,8 +24,8 @@ function filtrar(tarefas){
 }
 
 function atualizar(){
-    document.querySelector("#tarefas").innerHTML = ""
     localStorage.setItem("tarefas", JSON.stringify(tarefas))
+    document.querySelector("#tarefas").innerHTML = ""
     tarefas.forEach((tarefa) =>{
         document.querySelector("#tarefas").innerHTML 
                     += createCard(tarefa)
@@ -38,7 +38,7 @@ function cadastrar(){
     const categoria = document.querySelector("#categoria").value
     const modal = bootstrap.Modal.getInstance(document.querySelector("#exampleModal"))
 
-    const tarefa = {
+    const tarefa = { //JSON Java Script Object Notation
         id: Date.now(),
         titulo,
         descricao,
